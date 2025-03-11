@@ -1,6 +1,6 @@
 # **Parallelizing in C the library `Counter` from python**
 
-This is the final project of the subject cómputo de alto desempeño of the [<ins>Escuela Nacional de Estudios Superiores UNAM campus Morelia </ins>](https://www.enesmorelia.unam.mx).
+This is the final project for the High-Performance Computing course at the [<ins>Escuela Nacional de Estudios Superiores UNAM campus Morelia </ins>](https://www.enesmorelia.unam.mx).
 
 ---
 
