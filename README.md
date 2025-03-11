@@ -1,5 +1,7 @@
 # **Paralelizando `Counter` de Python con MPI en C**  
 
+This is the final project of the subject cómputo de alto desempeño of the [<ins>Escuela Nacional de Estudios Superiores UNAM campus Morelia </ins>](https://www.enesmorelia.unam.mx).
+
 ---
 
 ## License
@@ -7,14 +9,14 @@ This project is licensed under the MIT License. Please refer to the LICENSE docu
 
 ---
 
-## 📖 **Introduction**  
+## **Introduction**  
 En **Python**, la clase `Counter` de `collections` permite contar elementos de manera eficiente. Sin embargo, su ejecución es **secuencial**, lo que puede ser una limitante cuando se procesan grandes volúmenes de datos.  
 
 Este proyecto explora cómo **paralelizar `Counter`** utilizando **MPI en C**. La idea es distribuir la tarea de conteo entre múltiples procesos, lo que permite mejorar la eficiencia en sistemas con múltiples núcleos o clústeres de computación.  
 
 ---
 
-## ❓ **Justification**  
+## **Justification**  
 El problema del conteo de elementos es una tarea común en el procesamiento de datos, pero cuando el volumen de información es grande, una solución secuencial puede ser ineficiente.  
 
 🔹 **Problema:** `Counter` en Python **no escala bien** con grandes volúmenes de datos.  
@@ -24,12 +26,12 @@ Esto es especialmente útil en aplicaciones de **procesamiento de texto masivo**
 
 ---
 
-## 🎯 **General Objective**  
+## **General Objective**  
 Implementar una versión paralelizada del **contador de frecuencias de `Counter`** en **C con MPI**, distribuyendo el conteo entre múltiples procesos para mejorar la eficiencia en el procesamiento de grandes volúmenes de datos.  
 
 ---
 
-## 📌 **Particular Objectives**  
+## **Particular Objectives**  
 ✔ Dividir la cadena de texto en partes y distribuirlas entre múltiples procesos MPI.  
 ✔ Implementar el conteo de caracteres de manera independiente en cada proceso.  
 ✔ Fusionar los resultados de todos los procesos mediante `MPI_Reduce()`.  
@@ -37,16 +39,16 @@ Implementar una versión paralelizada del **contador de frecuencias de `Counter`
 
 ---
 
-## 🛠 **Methodology**  
+## **Methodology**  
 
 ### **1️⃣ Inicialización**  
-🔹 Definir la cadena de texto y el número de procesos MPI.  
-🔹 Dividir la cadena en fragmentos iguales y distribuirlos entre procesos.  
+• Definir la cadena de texto y el número de procesos MPI.  
+• Dividir la cadena en fragmentos iguales y distribuirlos entre procesos.  
 
 ### **2️⃣ Implementación del Algoritmo**  
-🔹 Cada proceso cuenta los caracteres de su fragmento de forma independiente.  
-🔹 Se usa un arreglo de tamaño 256 para almacenar la frecuencia de cada carácter ASCII.  
+• Cada proceso cuenta los caracteres de su fragmento de forma independiente.  
+• Se usa un arreglo de tamaño 256 para almacenar la frecuencia de cada carácter ASCII.  
 
 ### **3️⃣ Comunicación y Reducción de Datos**  
-🔹 Los procesos envían sus resultados al proceso maestro utilizando `MPI_Reduce()`.  
-🔹 El proceso maestro fusiona los conteos parciales para obtener el resultado final.  
+• Los procesos envían sus resultados al proceso maestro utilizando `MPI_Reduce()`.  
+• El proceso maestro fusiona los conteos parciales para obtener el resultado final.  
