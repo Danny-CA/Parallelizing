@@ -38,6 +38,7 @@ Implement a parallelized version of Python’s Counter in C with MPI, distributi
 ---
 
 ## **Particular Objectives**  
+
 ✅ Split the text string into parts and distribute them among multiple MPI processes.
 ✅ Implement independent character counting in each process.
 ✅ Merge the results from all processes using MPI_Reduce().
