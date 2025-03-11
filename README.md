@@ -10,4 +10,5 @@ texto = "bananaappleorange"
 conteo = Counter(texto)  
 print(conteo)  
 # Salida: Counter({'a': 5, 'n': 3, 'p': 2, 'b': 1, 'l': 1, 'e': 2, 'o': 1, 'r': 1, 'g': 1})
-
+```    
+Sin embargo, esto no aprovecha múltiples núcleos. Aquí mostramos cómo implementar esta idea en C con MPI, paralelizando el conteo en varios procesos.
