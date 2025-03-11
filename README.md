@@ -53,12 +53,15 @@ Implement a parallelized version of Python’s Counter in C with MPI, distributi
 
 1️⃣ Initialization
 • Define the text string and the number of MPI processes.
+
 • Divide the string into equal fragments and distribute them among the processes.
 
 2️⃣ Algorithm Implementation
 • Each process independently counts the characters in its assigned fragment.
+
 • A 256-element array is used to store the frequency of each ASCII character.
 
 3️⃣ Data Communication and Reduction
 • Processes send their results to the master process using MPI_Reduce().
+
 • The master process merges the partial counts to obtain the final result.  
