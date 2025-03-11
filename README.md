@@ -44,11 +44,4 @@ Implement a parallelized version of Python’s Counter in C with MPI, distributi
 ✅ Merge the results from all processes using MPI_Reduce().
 
 ✅ Compare the efficiency of the parallel method against Python’s Counter.
-
-
-
-3️⃣ Data Communication and Reduction
-
-• Processes send their results to the master process using MPI_Reduce().
-
-• The master process merges the partial counts to obtain the final result.  
+  
