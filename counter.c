@@ -112,6 +112,11 @@ int main(int argc, char **argv) {
         for (int i = 0; i < global_word_count; i++) {
             printf("%s: %d\n", global_counts[i].word, global_counts[i].count);
         }
+    }// Imprimir los resultados
+        printf("Word Counts:\n");
+        for (int i = 0; i < global_word_count; i++) {
+            printf("%s: %d\n", global_counts[i].word, global_counts[i].count);
+        }
     }
 
     MPI_Finalize();
