@@ -70,11 +70,20 @@ int main(int argc, char **argv) {
     MPI_Reduce(&local_counts, &global_counts, MAX_WORDS * sizeof(WordCount), MPI_BYTE, MPI_SUM, 0, MPI_COMM_WORLD);
     
     if (rank == 0) {
-        printf("Word Counts:\n");
-        for (int i = 0; i < global_word_count; i++) {
+    printf("Word Counts:\n");
+    for (int i = 0; i < MAX_WORDS; i++) { // Imprime todas las palabras
+        if (global_counts[i].count > 0) {
             printf("%s: %d\n", global_counts[i].word, global_counts[i].count);
         }
     }
+}
+
+// Imprimir en cada proceso para ver qué está contando
+printf("Proceso %d:\n", rank);
+for (int i = 0; i < local_word_count; i++) {
+    printf("%s: %d\n", local_counts[i].word, local_counts[i].count);
+}
+
     
     free(local_text);
     MPI_Finalize();
