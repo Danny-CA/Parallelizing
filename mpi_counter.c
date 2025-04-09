@@ -5,7 +5,7 @@
 #include "text_reader.h"
 
 #define MAX_WORD_LEN 100
-#define MAX_WORDS 1000
+#define MAX_WORDS 20000
 
 typedef struct {
     char word[MAX_WORD_LEN];
