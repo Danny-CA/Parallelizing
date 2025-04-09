@@ -29,7 +29,8 @@ int main(int argc, char *argv[]) {
         "banana", "apple", "orange", "banana", "apple",
         "apple", "grape", "melon", "banana", "kiwi"
     };
-    int total_words = 10;
+    
+    int total_words = sizeof(text) / sizeof(text[0]);
 
     int local_size = total_words / world_size;
     int remainder = total_words % world_size;
