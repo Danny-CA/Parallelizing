@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "text_reader.h"
 
 #define MAX_WORD_LEN 100
 #define MAX_WORDS 1000
@@ -25,12 +26,8 @@ int main(int argc, char *argv[]) {
     MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);
     MPI_Comm_size(MPI_COMM_WORLD, &world_size);
 
-    char *text[] = {
-        "banana", "apple", "orange", "banana", "apple",
-        "apple", "grape", "melon", "banana", "kiwi"
-    };
-    
-    int total_words = sizeof(text) / sizeof(text[0]);
+    char text[MAX_WORDS][MAX_WORD_LEN];
+    int total_words = read_words_from_file("input.txt", text);
 
     int local_size = total_words / world_size;
     int remainder = total_words % world_size;
