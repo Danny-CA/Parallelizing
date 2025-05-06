@@ -48,7 +48,6 @@ int main(int argc, char *argv[]) {
             local_count_size++;
         }
     }
-
     // Recolección en el maestro (rank 0)
     if (world_rank == 0) {
         WordCount global_counts[MAX_WORDS];
@@ -77,12 +76,18 @@ int main(int argc, char *argv[]) {
                 }
             }
         }
-
-        // Mostrar resultados
-        printf("Conteo final:\n");
-        for (int i = 0; i < global_count_size; ++i) {
-            printf("%s: %d\n", global_counts[i].word, global_counts[i].count);
+        // Mostrar resultados y guardarlos en archivo
+        FILE *output_file = fopen("output.txt", "w");
+        if (!output_file) {
+            perror("Error al abrir archivo de salida");
+            MPI_Finalize();
+            return 1;
         }
+        fprintf(output_file, "Conteo final:\n");
+        for (int i = 0; i < global_count_size; ++i) {
+            fprintf(output_file, "%s: %d\n", global_counts[i].word, global_counts[i].count);
+        }
+        fclose(output_file);
 
     } else {
         // Enviar tamaño primero
@@ -90,7 +95,6 @@ int main(int argc, char *argv[]) {
         // Enviar datos
         MPI_Send(local_counts, local_count_size * sizeof(WordCount), MPI_BYTE, 0, 1, MPI_COMM_WORLD);
     }
-
     MPI_Finalize();
     return 0;
 }
