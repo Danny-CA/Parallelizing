@@ -19,6 +19,13 @@ int find_word(WordCount *array, int size, const char *word) {
     return -1;
 }
 
+int compare_wordcount(const void *a, const void *b) {
+    WordCount *wc1 = (WordCount *)a;
+    WordCount *wc2 = (WordCount *)b;
+    return wc2->count - wc1->count;  // Orden descendente
+}
+
+
 int main(int argc, char *argv[]) {
     MPI_Init(&argc, &argv);
 
@@ -76,6 +83,10 @@ int main(int argc, char *argv[]) {
                 }
             }
         }
+
+        // Ordenar de mayor a menor por frecuencia
+        qsort(global_counts, global_count_size, sizeof(WordCount), compare_wordcount);
+
         // Mostrar resultados y guardarlos en archivo
         FILE *output_file = fopen("output.txt", "w");
         if (!output_file) {
