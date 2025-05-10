@@ -4,7 +4,6 @@
 #include <ctype.h>
 
 #define MAX_WORD_LEN 50
-#define MAX_WORDS 20000
 
 const char *stopwords[] = {
     "a", "about", "above", "after", "again", "against", "all", "am", "an", "and",
