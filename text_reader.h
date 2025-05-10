@@ -1,9 +1,8 @@
 #ifndef TEXT_READER_H
 #define TEXT_READER_H
 
-#define MAX_WORDS 20000
-#define MAX_WORD_LEN 100
+#define MAX_WORD_LEN 50
 
-int read_words_from_file(const char *filename, char words[][MAX_WORD_LEN]);
+char (*read_words_from_file(const char *filename, int *word_count))[MAX_WORD_LEN];
 
 #endif
