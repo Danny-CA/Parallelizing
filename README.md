@@ -13,10 +13,10 @@ This project is licensed under the MIT License. Please refer to the LICENSE docu
 In **Python**, the `Counter` class from the `collections` module allows for efficient element counting:
 ```python
 from collections import Counter  
-texto = ["banana", "apple", "orange"] 
-conteo = Counter(texto)  
-print(conteo)  
-# Salida: Counter({'banana': 1, 'apple': 1, 'orange': 1})
+text = ["banana", "apple", "orange"] 
+count = Counter(texto)  
+print(count)  
+# Output: Counter({'banana': 1, 'apple': 1, 'orange': 1})
 ```   
 However, its execution is sequential, which can be a limitation when processing large amounts of data.
 
