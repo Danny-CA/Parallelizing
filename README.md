@@ -20,7 +20,9 @@ print(conteo)
 ```   
 However, its execution is sequential, which can be a limitation when processing large amounts of data.
 
-This project explores how to parallelize `Counter` using MPI in C. The idea is to distribute the counting task among multiple processes, improving efficiency on multi-core systems or computing clusters.
+This project explores how to parallelize `Counter` using MPI in C. Two versions were developed: 
+1. One that splits a single text across processes.
+2. Another that assigns a separate input file to each process.
 
 ---
 
@@ -33,15 +35,18 @@ Element counting is a common task in data processing, but when dealing with larg
 ---
 
 ## **General Objective**  
-Implement a parallelized version of Python’s Counter in C with MPI, distributing the counting task among multiple processes to improve efficiency in processing large amounts of data.
+Implement two parallelized versions of Python’s Counter in C with MPI: one that distributes a single dataset across processes, and another that assigns different input files to each process. The goal is to improve efficiency in processing large volumes of data using distributed parallelism.
 
 ---
 
 ## **Particular Objectives**  
 
-• Split the text string into parts and distribute them among multiple MPI processes.
+• Split a single input file and distribute its content among multiple MPI processes (**splitfile version**).
 
-• Merge the results from all processes using MPI_Reduce().
+• Assign separate input files to each MPI process, allowing for distributed data processing from multiple sources (**multifile version**).
 
-• Compare the efficiency of the parallel method against Python’s Counter.
-  
+• Merge local counting results in the root process to produce a global result.
+
+• Write individual output files per process (in the multifile version) to simplify post-processing.
+
+• Compare the performance of the parallel implementations against Python’s `Counter` with large inputs.
