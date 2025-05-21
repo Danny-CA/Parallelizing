@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "wordcount.h"
+
+int main(int argc, char *argv[]) {
+    if (argc != 3) {
+        fprintf(stderr, "Uso: %s <archivo.txt> <num_hilos>\n", argv[0]);
+        return 1;
+    }
+
+    const char *filename = argv[1];
+    int num_threads = atoi(argv[2]);
+
+    if (num_threads <= 0) {
+        fprintf(stderr, "Número de hilos inválido.\n");
+        return 1;
+    }
+
+    size_t total_words = parallel_word_count(filename, num_threads);
+
+    printf("Total de palabras: %zu\n", total_words);
+    return 0;
+}
