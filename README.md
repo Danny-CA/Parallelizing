@@ -39,14 +39,16 @@ Implement a parallelized version of Python’s Counter in C using OpenMP, distri
 
 ## **Particular Objectives**  
 • Read a single input file and split its content among multiple threads.
+
 • Perform local counting of elements in parallel using OpenMP.
+
 • Merge local counting results into a global result efficiently.
+
 • Compare the performance of the parallel implementation against Python’s Counter with large inputs.
 
 ## **Results**
-To evaluate the performance of the parallel implementation using OpenMP, we compared the execution time of:
 
-##  Comparison with Small, Medium, and Large Inputs
+### Comparison with Small, Medium, and Large Inputs
 
 | Input Size | Python `Counter` | OpenMP Counter (C) |
 |------------|------------------|--------------------|
