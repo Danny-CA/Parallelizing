@@ -48,7 +48,10 @@ Implement a parallelized version of Python’s Counter in C using OpenMP, distri
 
 ## **Results**
 
-### Comparison with Small, Medium, and Large Inputs
+### Execution time vs. Number of threads
+[hreads](results/hilos.png)
+
+### Comparison with Small (256 mb), Medium (512 mb), and Large (1024 mb) Inputs
 
 | Input Size | Python `Counter` | OpenMP Counter (C) |
 |------------|------------------|--------------------|
