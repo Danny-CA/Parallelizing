@@ -50,7 +50,7 @@ To evaluate the performance of the parallel implementation using OpenMP, we comp
 
 | Input Size | Python `Counter` | OpenMP Counter (C) |
 |------------|------------------|--------------------|
-| Small      | ![Python Small](results/python.png) | ![OpenMP Small](results/c.png) |
-| Medium     | ![Python Medium](results/python.png) | ![OpenMP Medium](results/c.png) |
-| Large      | ![Python Large](results/python.png) | ![OpenMP Large](results/c.png) |
+| Small      | ![Python Small](results/python.png) | ![OpenMP Small](results/c_small.png) |
+| Medium     | ![Python Medium](results/python.png) | ![OpenMP Medium](results/c_medium.png) |
+| Large      | ![Python Large](results/python.png) | ![OpenMP Large](results/c_large.png) |
 
