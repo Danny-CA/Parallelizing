@@ -20,33 +20,37 @@ print(count)
 ```   
 However, its execution is sequential, which can be a limitation when processing large amounts of data.
 
-This project explores how to parallelize `Counter` using MPI in C. Two versions were developed: 
-1. One that splits a single text across processes.
-2. Another that assigns a separate input file to each process.
+This project explores how to parallelize Counter using OpenMP in C. A version was developed that splits a single text into chunks processed in parallel using threads.
 
 ---
 
 ## **Justification**  
 Element counting is a common task in data processing, but when dealing with large datasets, a sequential solution can be inefficient.
 
-• **Problem:** Python’s Counter does not scale well with large datasets.  
-• **Solution:** Use MPI in C to split the work across multiple processes and merge the results.
+• **Problem:** Python’s Counter does not scale well with large datasets.
+• **Solution:** Use OpenMP to divide the work among multiple threads and merge the results efficiently.
 
 ---
 
 ## **General Objective**  
-Implement two parallelized versions of Python’s Counter in C with MPI: one that distributes a single dataset across processes, and another that assigns different input files to each process. The goal is to improve efficiency in processing large volumes of data using distributed parallelism.
+Implement a parallelized version of Python’s Counter in C using OpenMP, distributing a single dataset across threads to improve efficiency in processing large volumes of data using shared-memory parallelism.
 
 ---
 
 ## **Particular Objectives**  
+• Read a single input file and split its content among multiple threads.
+• Perform local counting of elements in parallel using OpenMP.
+• Merge local counting results into a global result efficiently.
+• Compare the performance of the parallel implementation against Python’s Counter with large inputs.
 
-• Split a single input file and distribute its content among multiple MPI processes (**splitfile version**).
+## **Results**
+To evaluate the performance of the parallel implementation using OpenMP, we compared the execution time of:
 
-• Assign separate input files to each MPI process, allowing for distributed data processing from multiple sources (**multifile version**).
+##  Comparison with Small, Medium, and Large Inputs
 
-• Merge local counting results in the root process to produce a global result.
+| Input Size | Python `Counter` | OpenMP Counter (C) |
+|------------|------------------|--------------------|
+| Small      | ![Python Small](results/python.png) | ![OpenMP Small](results/c.png) |
+| Medium     | ![Python Medium](results/python.png) | ![OpenMP Medium](results/c.png) |
+| Large      | ![Python Large](results/python.png) | ![OpenMP Large](results/c.png) |
 
-• Write individual output files per process (in the multifile version) to simplify post-processing.
-
-• Compare the performance of the parallel implementations against Python’s `Counter` with large inputs.
