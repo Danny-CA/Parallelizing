@@ -4,6 +4,9 @@ This is the final project for the High Performance Computing course at the [<ins
 
 ---
 
+## Author
+Carlos Daniel Camilo Aguilar | camilodani065@gmail.com
+
 ## License
 This project is licensed under the MIT License. Please refer to the LICENSE document for more details regarding referencing and usage of this project.
 
