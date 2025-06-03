@@ -62,3 +62,5 @@ Implement a parallelized version of Python’s Counter in C using OpenMP, distri
 | Medium     | ![Python Medium](results/python_medium.png) | ![OpenMP Medium](results/c_medium.png) |
 | Large      | ![Python Large](results/python_large.png) | ![OpenMP Large](results/c_large.png) |
 
+## **Bibliography**
+[OpenMP](https://www.openmp.org/)
