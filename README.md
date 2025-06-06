@@ -4,7 +4,7 @@ This is the final project for the High Performance Computing course at the [<ins
 
 ---
 
-## Author
+## Author and contact
 Carlos Daniel Camilo Aguilar | camilodani065@gmail.com
 
 ## License
