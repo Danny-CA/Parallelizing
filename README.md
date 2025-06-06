@@ -64,5 +64,7 @@ Implement a parallelized version of Python’s Counter in C using OpenMP, distri
 
 ## **Bibliography**
 [OpenMP](https://www.openmp.org/)
+
 [uthash](https://github.com/troydhanson/uthash)
+
 [Documentation](https://learn.microsoft.com/es-es/cpp/parallel/openmp/reference/openmp-directives?view=msvc-170)
